@@ -13,4 +13,47 @@
   - tablet landscape: <1200
   - desktop: <1800
   - big desktop: >1800 //중요하지 않음
-- 
+- html에 media 쿼리를 통해 fontsize를 조정하면 한번에 비율을 조절 할 수 있음
+- 미디어쿼리에서는 em을 사용하는것이 좋음 rem은 일부 브라우저에서 의도한대로 작동하지 않음
+- 미디어 쿼리를 작성할 때 순서가 중요함. max-width의 경우 큰 값이 위로 가야함
+  - 중복될 경우 가장 아래있는게 적용
+- 반응형 이미지는 성능에 굉장히 중요함
+  - 모바일에 사용할 이미지의 경우 굳이 큰 용량의 이미지를 다운로드 받아야할 필요가 없음
+  - 3가지 방식
+    - 이미지의 해상도를 낮추고 작은 화면에 보여주는 방식
+    - 이미지르 해상도를 절반으로 줄이는 방식
+    - 전혀 다른 대체 이미지를 사용하는 방식
+- picture 태그 사용
+  - source와 img로 구성, source안에 mdeia를 통해 media 쿼리를 설정할 수 있음. 모든 조건에 해당하지 않거나 브라우저에서 지원하지 않을경우 img를 사용
+- img태그 사용 srcset, size를 통해 설정
+  - srcset은 w(이미지 원본 크기 명시)에 따라 가장 최적화된 이미지를 불러오도록 만듬
+  - size는 뷰포트 너비에 따른 이미지 크기를 설정할수 있다.
+- @media쿼리를 사용하여 css를 통해서도 동일한 효과를 사용할 수 있음
+  - resolution을 통해서 해상도를 설정할 수 있음
+  - and 연산을 원할경우 and를 표기하고 or 연산을 원할경우 , 를 사용하면 가능함
+- [caniuse](https://caniuse.com/) 를 통해서 브라우저별로 사용할 수 있는 속성들을 확인할 수 있음
+- 지원이 되는경우에만 속성을 지정하고 싶을 경우 @supports를 통해서 확인할 수 있음
+
+
+
+배포단계
+
+1. sass를 css로 compile
+2. css들을 concat을 사용해서 하나로 병합
+3. prefix를 사용해서 css prefix를 자동으로 추가
+4. compress를 통해서 css 용량을 줄임
+
+
+
+- npm-run-all을 통해서 순서대로 명령을 자동 실행할 수 있음
+  - --parallel 옵션을 추가하면 계속 실행되야 하는 명령어들도 동시에 실행 가능
+
+- 드래그 색상 변경 -> ::selection 을 수정하면 됨
+
+- @media 쿼리에 only screen and를 추가해주어 인쇄할때는 media 쿼리가 적용되지 않도록 함
+
+- <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  을 추가해야 반응형 웹이 제대로 구현됨. 추가하지 않을 경우 가장 너비가 넓은 content를 기준으로 web을 구현함
+
+- hover기능을 사용할 수 없는 디바이스를 위해서 hover:none옵션을 사용할 수 있음
