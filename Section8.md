@@ -1,0 +1,31 @@
+- html에서 div단축어로 만들 때 $을 붙이고 *을통해 여러개 자식요소 만들면
+  - $에 자동으로 숫자 채워짐
+- grid
+  - fr속성을 통해서 비율을 설정할 수 있음(flexgrow와 유사)
+  - repeat(반복횟수, 값)를 사용해서 코드 길이를 줄 일 수 있음
+  - 순서를 바꾸고자 할때는 grid-row/column-start / grid-row/column-end / grid-row/ gird-column / grid-area를 사용하면 가능(gutter 번호를 사용)
+    - 순서를 바꾸는 것 뿐만 아니라 cell끼리 병합시키는것도 가능(2/4 와 같이 작성하면 됨)
+    - 만일 고정된 값이 선언되어 있는 cell을 병합시키려 할 경우 cell이 겹쳐짐(오버레이)
+    - 하지만 고정된 값에 row와 column이 모두 선언되어 있지 않을 경우 다음줄로 내려감
+    - 시작점/span개수 와같이도 사용 가능(-1을 적을 경우 끝까지를 의미)
+  - 라인 이름
+    - [라인이름]10px [라인이름 라인이름] 100px[라인이름] 과 같은 형식으로 선언하면 숫자 대신 라인이름으로 cell의 시작과 끝을 결정 가능
+    -  repeat에 라인 이름을 선언한 경우 ""라인이름 번호"의 형식으로 사용 가능
+  - 영역 이름
+    - gird-template-areas를 통해서 area별로 이름을 정해둔 후
+      gird-area를 통해 해당 cell의 area이름을 선언하여 사용 가능
+    - 칸에 맞게 전부 이름을 채우지 않으면 작동하지 않음
+  - grid-auto-flow: column -> 채워지는 순서가 위에서 아래로 채워짐
+    - dense옵션을 추가하면 공백없이 채워나감
+- implicit
+  - 선언되지 못한 grid들
+  - grid-auto-rows/columns를 통해서 길이를 지정할 수 있음
+- grid 정렬
+  - align-items, justify-items, align-self, justify-self
+  - justify-content, align-content
+
+- max-content, min-content를 통해서 해당 row/column의 content 크기에 맞추어 넓이 지정 가능
+  - maxmin()함수를 통해서 최소, 최대 길이를 지정할 수도 있음
+- auto-fill: repeat(auto-fill, 100px)할 경우 auto-fill에 자동으로 최대 개수가 채워짐
+- auto-fit의 경우는 딱 맞춰서 채워짐
+  - maxmin과 함께 사용할 경우 자동 줄바꿈을 유도할 수 있음

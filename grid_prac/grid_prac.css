@@ -1,0 +1,35 @@
+body {
+    display: grid;
+    grid-template-rows: 50px 150px 300px 50px;
+    grid-template-columns: repeat(4, 150px);
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+}
+
+.header {
+    background-color: orangered;
+    grid-row: 1/2;
+    grid-column: 1/-1;
+}
+
+.small-box {
+    background-color: yellowgreen;
+}
+
+.sidebar {
+    background-color: teal;
+    grid-row: 2/-2;
+    grid-column: 4/-1;
+}
+
+.main-content {
+    background-color: palevioletred;
+    grid-row: 3/4;
+    grid-column: 1/-2;
+}
+
+.footer {
+    background-color: powderblue;
+    grid-row: -2/-1;
+    grid-column: 1/-1;
+}

@@ -1,0 +1,34 @@
+- flex
+  - flex-direction: 방향 설정(좌우(default), 좌우반전, 상하, 상하반전)
+  - justify-content: main방향에서의 배치 결정
+  - align-items: cross방향에서의 배치 결정
+- flex-item
+  - align-self: align-item을 개별적으로 수정 가능
+  - order: 순서를 앞으로 보낼 수 있음(default = 0)
+  - flex-grow: 증가 너비 비율 설정
+    - 기본으로 설정하지 않을경우 최소 크기만 사용하게 됨
+  - flex-basis: 기본 너비 설정(단위 사용)
+  - flex-shrink: 감소 너비 비율 설정
+  - flex: grow shrink basis 순서로 단축해서 사용 가능
+- flex-wrap
+  - : 공간을 넘어서게 될 경우 cross방향으로 확장을 시켜 표기
+  - align-content: cross방향에서의 배치 결정
+
+
+
+- css변수
+  - :root{}에 선언(모든 요소들의 부모이기 때문에, 변수들은 부모로부터 상속받아짐)
+  - --을 앞에 붙이고 속성을 적듯이 사용하면 선언됨
+  - 사용할때는 var()을 사용해서 이용 가능
+  - js에서도 사용할 수 있다는 장점때문에 sass 변수를 사용하는것보다 유용하게 사용가능
+- svg를 통해서 아이콘 사용하기
+  - [무료svg아이콘사이트](https://icomoon.io/)
+  - 사용법
+    - svg태그를 사용
+    - 자식요소로 use태그를 사용, xlink:href에 경로를 적음(웹서버를 사용할 때만 보임, 경로를 통해서 확인 할 겨우 보이지 않음)
+    - 압축된 svg의 경우 #를통해 경로와 이름을 구분함
+  - 색상변경을 원할 경우 fill속성을 통해서 가능
+- fill에 currentColor을 사용할 경우 부모의 color값 혹은 자신의 color값을 그대로 사용함
+- transform-origin 속성을 통해서 변화의 기준점을 설정 가능
+- flex를 통해서 영역을 확장시킬 경우 실제 요소가 확장되기 때문에 이를 원하지 않을경우 margin-right를 사용하여 동일한 효과를 가지면서 요소를 확장시키지 않을 수 있음
+- last-of-type -> 같은 유형의 맨 마지막 형제를 선택하는 pseudo
